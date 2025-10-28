@@ -2,3 +2,5 @@ black
 pandas
 notebook
 seaborn
+jupyter
+ipynb
