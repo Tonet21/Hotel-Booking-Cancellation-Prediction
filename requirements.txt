@@ -4,3 +4,6 @@ notebook
 seaborn
 jupyter
 ipynb
+lazypredict
+scikit-learn
+xgboost
