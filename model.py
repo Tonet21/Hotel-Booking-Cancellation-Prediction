@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 # 1️⃣ Load your already cleaned dataset
 df = pd.read_csv("cleaned_hotel_data.csv")
 
+
 # 2️⃣ Define target and features
 X = df.drop("is_canceled", axis=1)
 y = df["is_canceled"]
