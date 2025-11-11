@@ -7,3 +7,4 @@ ipynb
 lazypredict
 scikit-learn
 xgboost
+streamlit
