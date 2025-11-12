@@ -24,7 +24,8 @@ rf = RandomForestClassifier(
     n_estimators=200,
     max_depth=None,
     random_state=42,
-    n_jobs=-1
+    n_jobs=-1,
+    class_weight="balanced"
 )
 rf.fit(X_train, y_train)
 
