@@ -2,6 +2,8 @@
 
 A Machine Learning project using EDA, LazyPredict, and XGBoost
 
+Link: https://hotel-booking-cancellation-prediction-k6ueusw85czhademi3uscn.streamlit.app/
+
 ## Overview
 
 This project aims to predict hotel booking cancellations using structured booking data.
