@@ -18,30 +18,28 @@ columns =list(df)
 input= {}
 
 for x in columns:
-    # Determine if column is numeric
+
 
     is_numeric = np.issubdtype(df[x].dtype, np.number)
     
-    # Choose appropriate placeholder
+
     placeholder = "Number" if is_numeric else "Text"
     
-    # Get user input as text (Streamlit always returns strings from text_input)
     val = st.text_input(x.replace("_", " ").title(), placeholder=placeholder)
     
-    # Validate and convert
     if val:
         if is_numeric:
             try:
                 input[x] = float(val)
             except ValueError:
-                st.error(f"❌ {x.replace("_", " ").title()} must be a number.")
+                st.error(f"{x.replace("_", " ").title()} must be a number.")
         else:
             # Expect text, but reject pure numbers
             if re.fullmatch(r"[A-Za-zÀ-ÿ\s]+", val):
                 input[x] = val
                 
             else:
-                st.error(f"❌ {x.replace("_", " ").title()} must be text.") 
+                st.error(f"{x.replace("_", " ").title()} must be text.") 
 
 with st.form(key='my_form_to_submit'):
 
@@ -54,5 +52,5 @@ if predict_button:
     input_df = input_df.reindex(columns=model.get_booster().feature_names, fill_value=0)   
     prediction = model.predict(input_df)[0]
     probs = model.predict_proba(input_df)[0]
-    result = "❌ Canceled" if prediction == 1 else "✅ Not Canceled"
+    result = "Canceled" if prediction == 1 else "Not Canceled"
     st.subheader(f"Prediction: {result} with a probabilty of {probs[prediction]*100}%")

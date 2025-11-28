@@ -8,3 +8,4 @@ lazypredict
 scikit-learn
 xgboost
 streamlit
+shap
