@@ -3,6 +3,14 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Ignore VSCode settings
+.vscode/
+
+# Optionally ignore other temp files
+*.log
+*.tmp
+
+
 # C extensions
 *.so
 
